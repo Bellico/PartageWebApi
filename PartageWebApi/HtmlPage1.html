@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+    <script>
+        
+
+        $(function () {
+
+            var t = {};
+            t.text = "mon text";
+            t.coche = { un: 1, oui: 'oui', id: { a: 'b', b: 'c' } };
+            t.autre = "autre";
+
+
+
+            $.ajax({
+                url: "http://localhost:10596/api/ContentType/text",
+                type: "POST",
+                data: t,
+                contentType: 'application/json',
+                success: function (data) { console.log(data); },
+                error: function () { alert('error'); }
+            });
+        });
+
+
+    </script>
+   
+</body>
+</html>
